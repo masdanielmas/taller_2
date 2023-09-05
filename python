@@ -10,14 +10,14 @@ while True:
         elif tiempoTrayecto < 0:
             print("El tiempo debe ser mayor o igual que 0.")
         else:
-            tiempoTotal += tiempoTrayecto  # Acumula el tiempo total
+            tiempoTotal += tiempoTrayecto  
     except ValueError:
         print("Ingresa un número válido.")
 
 tiempoTotalHoras = tiempoTotal / 60
+#minutos = tiempoTotal % 60
 horas = int(tiempoTotalHoras)
 minutos = int((tiempoTotalHoras - horas) * 60)
 
-print("El tiempo total en horas es:", horas, "horas y", minutos, "minutos")
-
+print("El tiempo total es:", horas, ":", minutos, "horas")
 
