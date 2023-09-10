@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Mediana {
+    public static void main(String[] args) {
+        List<Double> numeros = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        
+        while (true) {
+            System.out.print("Ingrese valores y termine con (.) : ");
+            String valores = scanner.nextLine();
+            
+            if (valores.equals(".")) {
+                break;
+            }
+            
+            double valor = Double.parseDouble(valores);
+            numeros.add(valor);
+        }
+        
+        int x = numeros.size();
+        String mediana;
+        
+        if (x % 2 == 1) {
+            mediana = String.valueOf(numeros.get(x / 2));
+        } else {
+            double medianaCalculada = (numeros.get(x / 2 - 1) + numeros.get(x / 2)) / 2.0;
+            mediana = String.valueOf(medianaCalculada);
+        }
+        
+        System.out.println("La mediana es: " + mediana);
+        
+        scanner.close();
+    }
+}
